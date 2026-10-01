@@ -1,0 +1,50 @@
+
+body {
+    font-family: Arial;
+    max-width: 800px;
+    margin: auto;
+    padding: 30px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    font-size: 18px;
+}
+
+.contact {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.contact p {
+    margin: 0;
+}
+
+h2 {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+}
+
+.main-content {
+    display: flex;
+    gap: 40px;
+}
+
+.left-column {
+    flex: 2;
+}
+
+.right-column {
+    flex: 1;
+}
