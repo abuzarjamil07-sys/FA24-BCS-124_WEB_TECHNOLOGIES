@@ -66,6 +66,7 @@ h3 {
 .right-column {
     flex: 1;
 }
+<<<<<<< HEAD:style.css
 
 /* On screens narrower than 600px, stack the columns */
 @media (max-width: 600px) {
@@ -74,3 +75,5 @@ h3 {
         gap: 0;
     }
 }
+=======
+>>>>>>> 3f63bde18ba4d3e2bbbb524008b1ea9fee774e0b:assignment-1/style.css
