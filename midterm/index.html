@@ -42,115 +42,42 @@
   </section>
 
   <!-- PRODUCT GRID -->
-   <main class="container py-5" id="products">
-    <h2 class="mb-4">Best Selling</h2>
+   <  <main class="container py-5">
 
-    <!-- Hidden radio buttons: they remember which filter is selected.
-         Same name="category" means only ONE can be selected at a time.
-         "checked" makes All selected when the page loads. -->
-    <input type="radio" name="category" id="cat-all" class="filter-radio" checked>
-    <input type="radio" name="category" id="cat-earrings" class="filter-radio">
-    <input type="radio" name="category" id="cat-chains" class="filter-radio">
-    <input type="radio" name="category" id="cat-rings" class="filter-radio">
+    <!-- CSS Grid container. Its 3 children are placed using named grid areas (see style.css) -->
+    <div class="product-layout">
 
-    <!-- The visible buttons. Clicking a label selects the radio with the matching id. -->
-    <div class="filter-bar mb-4">
-      <label for="cat-all">All</label>
-      <label for="cat-earrings">Earrings</label>
-      <label for="cat-chains">Chains &amp; Bracelets</label>
-      <label for="cat-rings">Rings &amp; Sets</label>
-    </div>
-
-    <!-- col-6 = 2 per row (phone), col-md-4 = 3 per row (tablet), col-lg-3 = 4 per row (desktop).
-         Each column also has "product" and one category class (earrings / chains / rings). -->
-    <div class="row g-3">
-
-      <div class="col-6 col-md-4 col-lg-3 product earrings">
-        <div class="card h-100">
-          <a href="product.html"><img src="images/hoops.svg" class="card-img-top" alt="Waterproof Hoop Earrings"></a>
-          <div class="card-body d-flex flex-column">
-            <h3 class="card-title fs-6">Waterproof Hoop Earrings</h3>
-            <p class="fw-bold">Rs. 2,200</p>
-            <button class="btn btn-dark mt-auto">Add to Cart</button>
-          </div>
-        </div>
+      <div class="product-image">
+        <img src="images/hoops.svg" class="rounded" alt="Waterproof Hoop Earrings">
       </div>
 
-      <div class="col-6 col-md-4 col-lg-3 product earrings">
-        <div class="card h-100">
-          <a href="product.html"><img src="images/studs.svg" class="card-img-top" alt="Mini Stud Set"></a>
-          <div class="card-body d-flex flex-column">
-            <h3 class="card-title fs-6">Mini Stud Set</h3>
-            <p class="fw-bold">Rs. 1,500</p>
-            <button class="btn btn-dark mt-auto">Add to Cart</button>
-          </div>
+      <!-- This is the box that stays sticky on wide screens -->
+      <div class="product-details">
+        <h1 class="h2">Waterproof Hoop Earrings</h1>
+        <p class="fs-4 fw-bold">Rs. 2,200</p>
+
+        <label for="qty" class="form-label">Quantity</label>
+        <div class="input-group qty-box mb-3">
+          <button class="btn btn-outline-dark" type="button">-</button>
+          <input type="text" id="qty" class="form-control text-center" value="1">
+          <button class="btn btn-outline-dark" type="button">+</button>
         </div>
+
+        <button class="btn btn-dark btn-lg w-100">Add to Cart</button>
       </div>
 
-      <div class="col-6 col-md-4 col-lg-3 product chains">
-        <div class="card h-100">
-          <a href="product.html"><img src="images/necklace.svg" class="card-img-top" alt="Chain Necklace"></a>
-          <div class="card-body d-flex flex-column">
-            <h3 class="card-title fs-6">Chain Necklace</h3>
-            <p class="fw-bold">Rs. 3,200</p>
-            <button class="btn btn-dark mt-auto">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-6 col-md-4 col-lg-3 product chains">
-        <div class="card h-100">
-          <a href="product.html"><img src="images/bracelet.svg" class="card-img-top" alt="Layered Bracelet"></a>
-          <div class="card-body d-flex flex-column">
-            <h3 class="card-title fs-6">Layered Bracelet</h3>
-            <p class="fw-bold">Rs. 2,400</p>
-            <button class="btn btn-dark mt-auto">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-6 col-md-4 col-lg-3 product rings">
-        <div class="card h-100">
-          <a href="product.html"><img src="images/ring.svg" class="card-img-top" alt="Signet Ring"></a>
-          <div class="card-body d-flex flex-column">
-            <h3 class="card-title fs-6">Signet Ring</h3>
-            <p class="fw-bold">Rs. 1,800</p>
-            <button class="btn btn-dark mt-auto">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-6 col-md-4 col-lg-3 product earrings">
-        <div class="card h-100">
-          <a href="product.html"><img src="images/pearls.svg" class="card-img-top" alt="Pearl Drop Earrings"></a>
-          <div class="card-body d-flex flex-column">
-            <h3 class="card-title fs-6">Pearl Drop Earrings</h3>
-            <p class="fw-bold">Rs. 2,600</p>
-            <button class="btn btn-dark mt-auto">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-6 col-md-4 col-lg-3 product chains">
-        <div class="card h-100">
-          <a href="product.html"><img src="images/anklet.svg" class="card-img-top" alt="Twist Anklet"></a>
-          <div class="card-body d-flex flex-column">
-            <h3 class="card-title fs-6">Twist Anklet</h3>
-            <p class="fw-bold">Rs. 1,400</p>
-            <button class="btn btn-dark mt-auto">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-6 col-md-4 col-lg-3 product rings">
-        <div class="card h-100">
-          <a href="product.html"><img src="images/set.svg" class="card-img-top" alt="Everyday Jewelry Set"></a>
-          <div class="card-body d-flex flex-column">
-            <h3 class="card-title fs-6">Everyday Jewelry Set</h3>
-            <p class="fw-bold">Rs. 5,500</p>
-            <button class="btn btn-dark mt-auto">Add to Cart</button>
-          </div>
-        </div>
+      <div class="product-description">
+        <h2 class="h4">Description</h2>
+        <p>Lightweight hoops made for 24/7 wear. These earrings are waterproof and tarnish-resistant, so you can swim, shower, work out and sleep in them without taking them off.</p>
+        <p>Each pair is made from a stainless steel core with a thick gold-tone PVD coating. This coating is much harder than regular plating, which is why the color does not fade or turn your skin green, even with daily wear.</p>
+        <p>The hoops are light enough to forget you are wearing them. The hinged closure clicks shut securely, and the smooth inner edge will not catch on your hair or clothes.</p>
+        <h2 class="h4 mt-4">Care</h2>
+        <p>Rinse with clean water after the beach or pool and pat dry. Avoid harsh chemicals such as bleach. Store in the pouch provided when you are not wearing them.</p>
+        <h2 class="h4 mt-4">Shipping and returns</h2>
+        <p>Free shipping nationwide on all orders. Standard delivery takes three to five working days. If you are not happy with your order, you can return it within seven days in its original condition for a full refund.</p>
+        <h2 class="h4 mt-4">Why Russet?</h2>
+        <p>Every piece is designed to be worn everywhere, all day, every day. Our lifetime warranty means that if your jewelry ever tarnishes under normal wear, we will replace it.</p>
+        <p>Thousands of customers across the country wear Russet every day, and our community is the reason we keep improving our designs.</p>
       </div>
 
     </div>

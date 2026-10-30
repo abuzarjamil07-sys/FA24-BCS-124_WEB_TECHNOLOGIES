@@ -91,3 +91,50 @@ h1, h2, h3, .navbar-brand { font-family: "Montserrat", sans-serif; }
 #cat-earrings:checked ~ .row .product:not(.earrings) { display: none; }
 #cat-chains:checked   ~ .row .product:not(.chains)   { display: none; }
 #cat-rings:checked    ~ .row .product:not(.rings)    { display: none; }
+
+/* ===== TASK 2: Product page with CSS Grid + named areas ===== */
+
+/* BELOW 624px: one column, stacked in this order: image, details, description */
+.product-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "image"
+    "details"
+    "description";
+  gap: 24px;
+}
+
+/* Each child is assigned to a named area */
+.product-image       { grid-area: image; }
+.product-details     { grid-area: details; }
+.product-description { grid-area: description; }
+
+.product-image img {
+  width: 100%;
+  aspect-ratio: 4 / 5;      /* tall image, so the sticky box has room to travel */
+  object-fit: cover;
+}
+
+.product-details {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* FROM 624px (BP = 600 + 24) AND WIDER */
+@media (min-width: 624px) {
+  .product-layout {
+    grid-template-columns: 1fr 1fr;        /* two equal columns */
+    grid-template-areas:
+      "image details"                      /* top row: side by side */
+      "description description";           /* bottom row: full width */
+    align-items: start;                    /* IMPORTANT: lets the box stay short so sticky can work */
+  }
+
+  .product-details {
+    position: sticky;
+    top: 94px;                             /* (N mod 40) + 70 = 24 + 70 = 94px from the top */
+  }
+}
