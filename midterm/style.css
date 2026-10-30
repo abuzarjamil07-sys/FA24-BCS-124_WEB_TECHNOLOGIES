@@ -1,0 +1,51 @@
+/* style.css - small custom touches on top of Bootstrap */
+
+:root {
+  --russet: #111111;      /* main brand colour (black, like Russet) */
+  --russet-dark: #3a3a3a;
+  --sand: #1d2126;        /* dark hero background */
+  --ink: #111111;         /* text colour */
+}
+
+body { font-family: "Montserrat", sans-serif; color: var(--ink); }
+h1, h2, h3, .navbar-brand { font-family: "Montserrat", sans-serif; }
+
+/* Navbar */
+.site-nav { background: #fff; border-bottom: 1px solid #e5e5e5; }
+.topbar { background: #111; height: 8px; }
+.navbar-brand { color: var(--russet) !important; font-size: 1.6rem; font-weight: 800; letter-spacing: .04em; }
+.nav-link { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; }
+.nav-link:hover { color: var(--russet) !important; }
+.cart-link { position: relative; color: var(--ink); }
+.cart-badge {
+  position: absolute; top: -6px; right: -10px;
+  background: var(--russet); color: #fff;
+  font-size: .7rem; border-radius: 50%;
+  width: 18px; height: 18px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* Hero banner on homepage */
+.hero { background: linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)), var(--sand); color: #fff; padding: 6rem 0; }
+.hero h1 { font-size: clamp(1.6rem, 5vw, 2.6rem); font-weight: 800; letter-spacing: .04em; }
+.hero-kicker { font-size: .7rem; letter-spacing: .15em; text-transform: uppercase; margin-bottom: .5rem; }
+.hero-link { color: #fff; margin: 0 .75rem; border-bottom: 1px solid #fff; text-decoration: none; font-size: .85rem; }
+
+/* Brand button (overrides Bootstrap's blue) */
+.btn-russet { background: var(--russet); color: #fff; border: 0; border-radius: 0; letter-spacing: .06em; font-size: .85rem; }
+.btn-russet:hover { background: var(--russet-dark); color: #fff; }
+
+/* Product cards */
+.product-card { border: 1px solid #e5e5e5; height: 100%; }
+.product-card img { aspect-ratio: 1 / 1; object-fit: cover; }
+.product-card .price { color: var(--russet); font-weight: 600; }
+.product-card .card-title { font-size: 1rem; }
+
+/* Product detail page */
+.product-img { width: 100%; border-radius: .5rem; }
+.qty-box { max-width: 140px; }
+
+/* Footer */
+.site-footer { background: var(--ink); color: #e5e5e5; margin-top: 4rem; }
+.site-footer a { color: #e5e5e5; text-decoration: none; }
+.site-footer a:hover { text-decoration: underline; }

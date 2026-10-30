@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Russet - Waterproof Hoop Earrings</title>
+
+  <!-- Bootstrap first, then my own CSS (so mine can override it) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER: navbar collapses into a hamburger below 992px -->
+  <nav class="navbar navbar-expand-lg bg-white border-bottom">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">RUSSET</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#products">Shop</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">On Sale</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">🛒 Cart (0)</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PRODUCT DETAILS: stacked on phone (col-12), side by side from tablet up (col-md-6) -->
+  <main class="container py-5">
+    <div class="row g-4">
+
+      <div class="col-12 col-md-6">
+        <img src="images/hoops.svg" class="img-fluid rounded" alt="Waterproof Hoop Earrings">
+      </div>
+
+      <div class="col-12 col-md-6">
+        <h1 class="h2">Waterproof Hoop Earrings</h1>
+        <p class="fs-4 fw-bold">Rs. 2,200</p>
+        <p>Lightweight hoops made for 24/7 wear. Waterproof and tarnish-resistant, so you can swim, shower and sleep in them.</p>
+
+        <!-- Quantity selector (not working yet) -->
+        <label for="qty" class="form-label">Quantity</label>
+        <div class="input-group qty-box mb-3">
+          <button class="btn btn-outline-dark" type="button">-</button>
+          <input type="text" id="qty" class="form-control text-center" value="1">
+          <button class="btn btn-outline-dark" type="button">+</button>
+        </div>
+
+        <button class="btn btn-dark btn-lg w-100">Add to Cart</button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER (same as homepage) -->
+  <footer class="site-footer py-4">
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-12 col-md-4">
+          <h3 class="h5">RUSSET</h3>
+          <p class="small mb-0">Waterproof jewelry for 24/7 wear.</p>
+        </div>
+        <div class="col-6 col-md-4">
+          <h4 class="h6">Shop</h4>
+          <a href="index.html#products">All products</a>
+        </div>
+        <div class="col-6 col-md-4">
+          <h4 class="h6">Help</h4>
+          <a href="#">Shipping &amp; Returns</a>
+        </div>
+      </div>
+      <p class="small text-center mt-3 mb-0">&copy; 2026 Russet (student project)</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap's script, only used to open/close the hamburger menu -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
