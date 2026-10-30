@@ -100,7 +100,8 @@
   object-fit: cover;
 }
 
-.product-details {
+/* The visible white box with the name, price, quantity and button */
+.details-box {
   background: white;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -114,10 +115,16 @@
     grid-template-areas:
       "image details"                      /* top row: side by side */
       "description description";           /* bottom row: full width */
-    align-items: start;                    /* lets the box stay short so sticky can work */
+    align-items: start;
   }
 
+  /* The wrapper stretches to the full height of the image row.
+     The box can only stick inside it, so it never reaches the description. */
   .product-details {
+    align-self: stretch;
+  }
+
+  .details-box {
     position: sticky;
     top: 94px;                             /* (N mod 40) + 70 = 24 + 70 = 94px */
   }
