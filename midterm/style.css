@@ -1,54 +1,40 @@
-/* style.css - small custom touches on top of Bootstrap */
+/* My own small styles on top of Bootstrap */
 
-:root {
-  --russet: #111111;      /* main brand colour (black, like Russet) */
-  --russet-dark: #3a3a3a;
-  --sand: #1d2126;        /* dark hero background */
-  --ink: #111111;         /* text colour */
+/* Logo */
+.navbar-brand {
+  font-weight: 800;
+  letter-spacing: 2px;
 }
 
-body { font-family: "Montserrat", sans-serif; color: var(--ink); }
-h1, h2, h3, .navbar-brand { font-family: "Montserrat", sans-serif; }
-
-/* Navbar */
-.site-nav { background: #fff; border-bottom: 1px solid #e5e5e5; }
-.topbar { background: #111; height: 8px; }
-.navbar-brand { color: var(--russet) !important; font-size: 1.6rem; font-weight: 800; letter-spacing: .04em; }
-.nav-link { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; }
-.nav-link:hover { color: var(--russet) !important; }
-.cart-link { position: relative; color: var(--ink); }
-.cart-badge {
-  position: absolute; top: -6px; right: -10px;
-  background: var(--russet); color: #fff;
-  font-size: .7rem; border-radius: 50%;
-  width: 18px; height: 18px;
-  display: flex; align-items: center; justify-content: center;
+/* Hero banner */
+.hero {
+  background-color: #1d2126;
+  color: white;
+  padding: 80px 0;
 }
 
-/* Hero banner on homepage */
-.hero { background: linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)), var(--sand); color: #fff; padding: 6rem 0; }
-.hero h1 { font-size: clamp(1.6rem, 5vw, 2.6rem); font-weight: 800; letter-spacing: .04em; }
-.hero-kicker { font-size: .7rem; letter-spacing: .15em; text-transform: uppercase; margin-bottom: .5rem; }
-.hero-link { color: #fff; margin: 0 .75rem; border-bottom: 1px solid #fff; text-decoration: none; font-size: .85rem; }
+/* Make all product images the same square shape */
+.card-img-top {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
 
-/* Brand button (overrides Bootstrap's blue) */
-.btn-russet { background: var(--russet); color: #fff; border: 0; border-radius: 0; letter-spacing: .06em; font-size: .85rem; }
-.btn-russet:hover { background: var(--russet-dark); color: #fff; }
-
-/* Product cards */
-.product-card { border: 1px solid #e5e5e5; height: 100%; }
-.product-card img { aspect-ratio: 1 / 1; object-fit: cover; }
-.product-card .price { color: var(--russet); font-weight: 600; }
-.product-card .card-title { font-size: 1rem; }
-
-/* Product detail page */
-.product-img { width: 100%; border-radius: .5rem; }
-.qty-box { max-width: 140px; }
+/* Keep the quantity box small */
+.qty-box {
+  max-width: 140px;
+}
 
 /* Footer */
-.site-footer { background: var(--ink); color: #e5e5e5; margin-top: 4rem; }
-.site-footer a { color: #e5e5e5; text-decoration: none; }
-.site-footer a:hover { text-decoration: underline; }
+.site-footer {
+  background-color: #111;
+  color: #ddd;
+  margin-top: 40px;
+}
+
+.site-footer a {
+  color: #ddd;
+  text-decoration: none;
+}
 
 /* ===== TASK 1: CSS-only category filter ===== */
 
@@ -75,8 +61,7 @@ h1, h2, h3, .navbar-brand { font-family: "Montserrat", sans-serif; }
   border-radius: 20px;
 }
 
-/* The SELECTED label gets the accent colour.
-   Read it as: "if radio X is checked, style the label that belongs to X" */
+/* The SELECTED label gets the accent colour */
 #cat-all:checked ~ .filter-bar label[for="cat-all"],
 #cat-earrings:checked ~ .filter-bar label[for="cat-earrings"],
 #cat-chains:checked ~ .filter-bar label[for="cat-chains"],
@@ -86,11 +71,10 @@ h1, h2, h3, .navbar-brand { font-family: "Montserrat", sans-serif; }
   color: white;
 }
 
-/* THE FILTER: if a radio is checked, hide every product that is NOT in its category.
-   display: none removes the card completely, so the others move up and leave no gaps. */
-#cat-earrings:checked ~ .row .product:not(.earrings) { display: none; }
-#cat-chains:checked   ~ .row .product:not(.chains)   { display: none; }
-#cat-rings:checked    ~ .row .product:not(.rings)    { display: none; }
+/* THE FILTER: if a radio is checked, hide every product that is NOT in its category */
+#cat-earrings:checked ~ #product-grid .product:not(.earrings) { display: none; }
+#cat-chains:checked   ~ #product-grid .product:not(.chains)   { display: none; }
+#cat-rings:checked    ~ #product-grid .product:not(.rings)    { display: none; }
 
 /* ===== TASK 2: Product page with CSS Grid + named areas ===== */
 
@@ -130,15 +114,16 @@ h1, h2, h3, .navbar-brand { font-family: "Montserrat", sans-serif; }
     grid-template-areas:
       "image details"                      /* top row: side by side */
       "description description";           /* bottom row: full width */
-    align-items: start;                    /* IMPORTANT: lets the box stay short so sticky can work */
+    align-items: start;                    /* lets the box stay short so sticky can work */
   }
 
   .product-details {
     position: sticky;
-    top: 94px;                             /* (N mod 40) + 70 = 24 + 70 = 94px from the top */
+    top: 94px;                             /* (N mod 40) + 70 = 24 + 70 = 94px */
   }
 }
-/* ===== TASK 3 ===== */
+
+/* ===== TASK 3: search, sort, premium label ===== */
 
 /* Hides a card when the search doesn't match (JS adds/removes this class) */
 .hidden-by-search {

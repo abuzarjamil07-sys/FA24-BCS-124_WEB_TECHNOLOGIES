@@ -4,14 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Russet - Waterproof Hoop Earrings</title>
-
-  <!-- Bootstrap first, then my own CSS (so mine can override it) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
 </head>
 <body>
 
-  <!-- HEADER: navbar collapses into a hamburger below 992px -->
+  <!-- HEADER (same as homepage) -->
   <nav class="navbar navbar-expand-lg bg-white border-bottom">
     <div class="container">
       <a class="navbar-brand" href="index.html">RUSSET</a>
@@ -32,20 +30,20 @@
     </div>
   </nav>
 
-  <!-- PRODUCT DETAILS: stacked on phone (col-12), side by side from tablet up (col-md-6) -->
   <main class="container py-5">
-    <div class="row g-4">
 
-      <div class="col-12 col-md-6">
-        <img src="images/hoops.svg" class="img-fluid rounded" alt="Waterproof Hoop Earrings">
+    <!-- TASK 2: CSS Grid container. Its 3 children are placed using named grid areas (see style.css) -->
+    <div class="product-layout">
+
+      <div class="product-image">
+        <img src="images/hoops.svg" class="rounded" alt="Waterproof Hoop Earrings">
       </div>
 
-      <div class="col-12 col-md-6">
+      <!-- This is the box that stays sticky on wide screens -->
+      <div class="product-details">
         <h1 class="h2">Waterproof Hoop Earrings</h1>
         <p class="fs-4 fw-bold">Rs. 2,200</p>
-        <p>Lightweight hoops made for 24/7 wear. Waterproof and tarnish-resistant, so you can swim, shower and sleep in them.</p>
 
-        <!-- Quantity selector (not working yet) -->
         <label for="qty" class="form-label">Quantity</label>
         <div class="input-group qty-box mb-3">
           <button class="btn btn-outline-dark" type="button">-</button>
@@ -54,6 +52,20 @@
         </div>
 
         <button class="btn btn-dark btn-lg w-100">Add to Cart</button>
+      </div>
+
+      <div class="product-description">
+        <h2 class="h4">Description</h2>
+        <p>Lightweight hoops made for 24/7 wear. These earrings are waterproof and tarnish-resistant, so you can swim, shower, work out and sleep in them without taking them off.</p>
+        <p>Each pair is made from a stainless steel core with a thick gold-tone PVD coating. This coating is much harder than regular plating, which is why the color does not fade or turn your skin green, even with daily wear.</p>
+        <p>The hoops are light enough to forget you are wearing them. The hinged closure clicks shut securely, and the smooth inner edge will not catch on your hair or clothes.</p>
+        <h2 class="h4 mt-4">Care</h2>
+        <p>Rinse with clean water after the beach or pool and pat dry. Avoid harsh chemicals such as bleach. Store in the pouch provided when you are not wearing them.</p>
+        <h2 class="h4 mt-4">Shipping and returns</h2>
+        <p>Free shipping nationwide on all orders. Standard delivery takes three to five working days. If you are not happy with your order, you can return it within seven days in its original condition for a full refund.</p>
+        <h2 class="h4 mt-4">Why Russet?</h2>
+        <p>Every piece is designed to be worn everywhere, all day, every day. Our lifetime warranty means that if your jewelry ever tarnishes under normal wear, we will replace it.</p>
+        <p>Thousands of customers across the country wear Russet every day, and our community is the reason we keep improving our designs.</p>
       </div>
 
     </div>
@@ -80,7 +92,6 @@
     </div>
   </footer>
 
-  <!-- Bootstrap's script, only used to open/close the hamburger menu -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
