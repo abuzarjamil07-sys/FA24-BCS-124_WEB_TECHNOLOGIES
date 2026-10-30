@@ -138,3 +138,25 @@ h1, h2, h3, .navbar-brand { font-family: "Montserrat", sans-serif; }
     top: 94px;                             /* (N mod 40) + 70 = 24 + 70 = 94px from the top */
   }
 }
+/* ===== TASK 3 ===== */
+
+/* Hides a card when the search doesn't match (JS adds/removes this class) */
+.hidden-by-search {
+  display: none;
+}
+
+/* Keep the search box a sensible width */
+.toolbar input {
+  max-width: 300px;
+}
+
+/* Small "Premium" label added by script.js */
+.premium-label {
+  align-self: flex-start;
+  background-color: var(--accent);
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 10px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
