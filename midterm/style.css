@@ -49,3 +49,45 @@ h1, h2, h3, .navbar-brand { font-family: "Montserrat", sans-serif; }
 .site-footer { background: var(--ink); color: #e5e5e5; margin-top: 4rem; }
 .site-footer a { color: #e5e5e5; text-decoration: none; }
 .site-footer a:hover { text-decoration: underline; }
+
+/* ===== TASK 1: CSS-only category filter ===== */
+
+/* My accent colour: hue H = 168 */
+:root {
+  --accent: hsl(168, 70%, 45%);
+}
+
+/* Hide the radio circles but keep them in the page (they still work) */
+.filter-radio {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The label buttons (not selected) */
+.filter-bar label {
+  display: inline-block;
+  cursor: pointer;
+  padding: 6px 16px;
+  margin: 0 8px 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+/* The SELECTED label gets the accent colour.
+   Read it as: "if radio X is checked, style the label that belongs to X" */
+#cat-all:checked ~ .filter-bar label[for="cat-all"],
+#cat-earrings:checked ~ .filter-bar label[for="cat-earrings"],
+#cat-chains:checked ~ .filter-bar label[for="cat-chains"],
+#cat-rings:checked ~ .filter-bar label[for="cat-rings"] {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+/* THE FILTER: if a radio is checked, hide every product that is NOT in its category.
+   display: none removes the card completely, so the others move up and leave no gaps. */
+#cat-earrings:checked ~ .row .product:not(.earrings) { display: none; }
+#cat-chains:checked   ~ .row .product:not(.chains)   { display: none; }
+#cat-rings:checked    ~ .row .product:not(.rings)    { display: none; }

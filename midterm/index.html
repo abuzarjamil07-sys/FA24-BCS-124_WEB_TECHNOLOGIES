@@ -42,13 +42,30 @@
   </section>
 
   <!-- PRODUCT GRID -->
-  <main class="container py-5" id="products">
+   <main class="container py-5" id="products">
     <h2 class="mb-4">Best Selling</h2>
 
-    <!-- col-6 = 2 per row (phone), col-md-4 = 3 per row (tablet), col-lg-3 = 4 per row (desktop) -->
+    <!-- Hidden radio buttons: they remember which filter is selected.
+         Same name="category" means only ONE can be selected at a time.
+         "checked" makes All selected when the page loads. -->
+    <input type="radio" name="category" id="cat-all" class="filter-radio" checked>
+    <input type="radio" name="category" id="cat-earrings" class="filter-radio">
+    <input type="radio" name="category" id="cat-chains" class="filter-radio">
+    <input type="radio" name="category" id="cat-rings" class="filter-radio">
+
+    <!-- The visible buttons. Clicking a label selects the radio with the matching id. -->
+    <div class="filter-bar mb-4">
+      <label for="cat-all">All</label>
+      <label for="cat-earrings">Earrings</label>
+      <label for="cat-chains">Chains &amp; Bracelets</label>
+      <label for="cat-rings">Rings &amp; Sets</label>
+    </div>
+
+    <!-- col-6 = 2 per row (phone), col-md-4 = 3 per row (tablet), col-lg-3 = 4 per row (desktop).
+         Each column also has "product" and one category class (earrings / chains / rings). -->
     <div class="row g-3">
 
-      <div class="col-6 col-md-4 col-lg-3">
+      <div class="col-6 col-md-4 col-lg-3 product earrings">
         <div class="card h-100">
           <a href="product.html"><img src="images/hoops.svg" class="card-img-top" alt="Waterproof Hoop Earrings"></a>
           <div class="card-body d-flex flex-column">
@@ -59,7 +76,7 @@
         </div>
       </div>
 
-      <div class="col-6 col-md-4 col-lg-3">
+      <div class="col-6 col-md-4 col-lg-3 product earrings">
         <div class="card h-100">
           <a href="product.html"><img src="images/studs.svg" class="card-img-top" alt="Mini Stud Set"></a>
           <div class="card-body d-flex flex-column">
@@ -70,7 +87,7 @@
         </div>
       </div>
 
-      <div class="col-6 col-md-4 col-lg-3">
+      <div class="col-6 col-md-4 col-lg-3 product chains">
         <div class="card h-100">
           <a href="product.html"><img src="images/necklace.svg" class="card-img-top" alt="Chain Necklace"></a>
           <div class="card-body d-flex flex-column">
@@ -81,7 +98,7 @@
         </div>
       </div>
 
-      <div class="col-6 col-md-4 col-lg-3">
+      <div class="col-6 col-md-4 col-lg-3 product chains">
         <div class="card h-100">
           <a href="product.html"><img src="images/bracelet.svg" class="card-img-top" alt="Layered Bracelet"></a>
           <div class="card-body d-flex flex-column">
@@ -92,7 +109,7 @@
         </div>
       </div>
 
-      <div class="col-6 col-md-4 col-lg-3">
+      <div class="col-6 col-md-4 col-lg-3 product rings">
         <div class="card h-100">
           <a href="product.html"><img src="images/ring.svg" class="card-img-top" alt="Signet Ring"></a>
           <div class="card-body d-flex flex-column">
@@ -103,7 +120,7 @@
         </div>
       </div>
 
-      <div class="col-6 col-md-4 col-lg-3">
+      <div class="col-6 col-md-4 col-lg-3 product earrings">
         <div class="card h-100">
           <a href="product.html"><img src="images/pearls.svg" class="card-img-top" alt="Pearl Drop Earrings"></a>
           <div class="card-body d-flex flex-column">
@@ -114,7 +131,7 @@
         </div>
       </div>
 
-      <div class="col-6 col-md-4 col-lg-3">
+      <div class="col-6 col-md-4 col-lg-3 product chains">
         <div class="card h-100">
           <a href="product.html"><img src="images/anklet.svg" class="card-img-top" alt="Twist Anklet"></a>
           <div class="card-body d-flex flex-column">
@@ -125,7 +142,7 @@
         </div>
       </div>
 
-      <div class="col-6 col-md-4 col-lg-3">
+      <div class="col-6 col-md-4 col-lg-3 product rings">
         <div class="card h-100">
           <a href="product.html"><img src="images/set.svg" class="card-img-top" alt="Everyday Jewelry Set"></a>
           <div class="card-body d-flex flex-column">
